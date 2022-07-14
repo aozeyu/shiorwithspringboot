@@ -53,4 +53,18 @@ public class CommonUtil {
                 itemCount / pageRow + 1 :
                 itemCount / pageRow;
     }
+
+    /**
+     * 查询分页结果后的封装工具方法
+     *
+     * @param list 查询分页对象list
+     */
+    public static JSONObject successPage(List<JSONObject> list) {
+        JSONObject result = successJson();
+        JSONObject returnData = new JSONObject();
+        returnData.put("list", list);
+        result.put("returnData", returnData);
+        return result;
+    }
+
 }
